@@ -7,7 +7,8 @@ defmodule Fab.MixProject do
       version: "0.0.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      elixirc_paths: elixirc_paths(Mix.env())
     ]
   end
 
@@ -22,5 +23,13 @@ defmodule Fab.MixProject do
       {:dialyxir, "== 1.4.5", only: :dev, runtime: false},
       {:ex_doc, "== 0.37.3", only: :dev, runtime: false}
     ]
+  end
+
+  defp elixirc_paths(:test) do
+    ["lib/", "test/support"]
+  end
+
+  defp elixirc_paths(_env) do
+    ["lib/"]
   end
 end
