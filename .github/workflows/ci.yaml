@@ -1,0 +1,64 @@
+name: ci
+on: push
+jobs:
+    dialyzer:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4.2.2
+
+            - id: beam
+              uses: erlef/setup-beam@v1.18.2
+              with:
+                  elixir-version: ${{ matrix.elixir }}
+                  otp-version: ${{ matrix.otp }}
+
+            - uses: actions/cache@v4.2.3
+              with:
+                  key: ${{ github.job }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-${{ hashFiles('mix.lock') }}-1
+                  path:
+                      _build/
+                      deps/
+
+            - run: mix deps.get
+
+            - run: mix compile --warnings-as-errors
+
+            - run: mix dialyzer
+        strategy:
+            matrix:
+                elixir:
+                    - 1.18.x
+
+                otp:
+                    - 27.x
+
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4.2.2
+
+            - id: beam
+              uses: erlef/setup-beam@v1.18.2
+              with:
+                  elixir-version: ${{ matrix.elixir }}
+                  otp-version: ${{ matrix.otp }}
+
+            - uses: actions/cache@v4.2.3
+              with:
+                  key: ${{ github.job }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-${{ hashFiles('mix.lock') }}-1
+                  path:
+                      _build/
+                      deps/
+
+            - run: mix deps.get
+
+            - run: mix compile --warnings-as-errors
+
+            - run: mix test
+        strategy:
+            matrix:
+                elixir:
+                    - 1.18.x
+
+                otp:
+                    - 27.x

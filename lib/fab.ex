@@ -1,0 +1,2 @@
+defmodule Fab do
+end
