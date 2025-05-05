@@ -15,7 +15,7 @@ jobs:
             - uses: actions/cache@v4.2.3
               with:
                   key: ${{ github.job }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-${{ hashFiles('mix.lock') }}-1
-                  path:
+                  path: |
                       _build/
                       deps/
 
@@ -46,7 +46,7 @@ jobs:
             - uses: actions/cache@v4.2.3
               with:
                   key: ${{ github.job }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-${{ hashFiles('mix.lock') }}-1
-                  path:
+                  path: |
                       _build/
                       deps/
 
