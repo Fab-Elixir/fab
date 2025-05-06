@@ -2,7 +2,7 @@ defmodule FabTest do
   use ExUnit.Case
 
   setup do
-    :rand.seed(:exsss, {0, 0, 0})
+    Application.put_env(:fab, :consistent, true)
     :ok
   end
 
