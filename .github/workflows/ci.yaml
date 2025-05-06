@@ -31,6 +31,7 @@ jobs:
                     - 1.17.x
                     - 1.16.x
                     - 1.15.x
+                    - 1.14.x
 
                 otp:
                     - 27.x
@@ -49,6 +50,9 @@ jobs:
                       otp: 27.x
 
                     - elixir: 1.15.x
+                      otp: 27.x
+
+                    - elixir: 1.14.x
                       otp: 27.x
 
     test:
@@ -81,6 +85,7 @@ jobs:
                     - 1.17.x
                     - 1.16.x
                     - 1.15.x
+                    - 1.14.x
 
                 otp:
                     - 27.x
@@ -99,4 +104,7 @@ jobs:
                       otp: 27.x
 
                     - elixir: 1.15.x
+                      otp: 27.x
+
+                    - elixir: 1.14.x
                       otp: 27.x
