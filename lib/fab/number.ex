@@ -3,6 +3,8 @@ defmodule Fab.Number do
   Functions for generating random numbers.
   """
 
+  import Fab.Randomizer
+
   @integer_max 9_007_199_254_740_991
 
   @doc """
@@ -20,13 +22,13 @@ defmodule Fab.Number do
       0.5
 
       iex> Fab.Number.float(5.0)
-      2.7
+      2.4
 
       iex> Fab.Number.float(min: 1.0, max: 2.0)
       1.5
 
       iex> Fab.Number.float(precision: 3)
-      0.546
+      0.481
   """
   @spec float(number | keyword) :: float
   def float(opts \\ [])
@@ -40,7 +42,7 @@ defmodule Fab.Number do
     max = Keyword.get(opts, :max, 1.0)
     precision = Keyword.get(opts, :precision, 1)
 
-    real = :rand.uniform()
+    real = uniform()
 
     Float.round(real * (max - min) + min, precision)
   end
@@ -57,13 +59,13 @@ defmodule Fab.Number do
   ## Examples
 
       iex> Fab.Number.integer()
-      4124546493281162
+      3482388666905187
 
       iex> Fab.Number.integer(1000)
-      128
+      610
 
       iex> Fab.Number.integer(min: 0, max: 1000)
-      128
+      610
   """
   @spec integer(pos_integer | keyword) :: integer
   def integer(opts \\ [])
@@ -76,6 +78,6 @@ defmodule Fab.Number do
     min = Keyword.get(opts, :min, 0)
     max = Keyword.get(opts, :max, @integer_max)
 
-    Enum.random(min..max)
+    random(min..max)
   end
 end
