@@ -19,16 +19,16 @@ defmodule Fab.Number do
   ## Examples
 
       iex> Fab.Number.float()
-      0.3
+      0.2
 
       iex> Fab.Number.float(5.0)
-      5.0
+      1.1
 
       iex> Fab.Number.float(min: 1.0, max: 2.0)
-      1.3
+      1.2
 
       iex> Fab.Number.float(precision: 3)
-      0.986
+      0.217
   """
   @spec float(number | keyword) :: float
   def float(opts \\ [])
@@ -59,13 +59,13 @@ defmodule Fab.Number do
   ## Examples
 
       iex> Fab.Number.integer()
-      3250115845605427
+      3630114979716424
 
       iex> Fab.Number.integer(1000)
-      170
+      340
 
-      iex> Fab.Number.integer(min: 0, max: 1000)
-      824
+      iex> Fab.Number.integer(min: 1, max: 1000)
+      185
   """
   @spec integer(pos_integer | keyword) :: integer
   def integer(opts \\ [])
