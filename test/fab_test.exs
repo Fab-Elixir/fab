@@ -1,8 +1,13 @@
 defmodule FabTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   setup tags do
-    seed = :binary.decode_unsigned(to_string(tags[:test]))
+    seed =
+      tags[:test]
+      |> to_string()
+      |> String.replace(~r/\(\d+\)/, "")
+      |> String.trim()
+      |> :binary.decode_unsigned()
 
     Application.put_env(:fab, :consistent, true)
     Application.put_env(:fab, :seed, seed)
