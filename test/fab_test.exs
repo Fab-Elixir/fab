@@ -16,4 +16,5 @@ defmodule FabTest do
   end
 
   doctest Fab.Number
+  doctest Fab.String
 end
