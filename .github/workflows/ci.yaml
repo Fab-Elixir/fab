@@ -108,3 +108,13 @@ jobs:
 
                     - elixir: 1.14.x
                       otp: 27.x
+    release:
+        if: ${{ github.ref == 'refs/heads/main' }}
+        needs:
+            - dialyzer
+            - test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: googleapis/release-please-action@v4.2.0
+              with:
+                  token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
