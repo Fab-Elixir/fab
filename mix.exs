@@ -4,7 +4,7 @@ defmodule Fab.MixProject do
   def project do
     [
       app: :fab,
-      version: "0.0.0",
+      version: "1.0.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
