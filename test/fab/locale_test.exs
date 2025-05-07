@@ -9,5 +9,6 @@ defmodule Fab.LocalTest do
 
     assert Fab.locale() == :es
     assert Fab.Locale.localize(Fab.Mock, :rando, []) == Fab.Es.Mock.rando()
+    assert Fab.Locale.localize(Fab.Mock, :no_rando, []) == Fab.En.Mock.no_rando()
   end
 end
