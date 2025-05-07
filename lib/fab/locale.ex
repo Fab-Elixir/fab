@@ -1,6 +1,6 @@
 defmodule Fab.Locale do
   @moduledoc """
-  Provides dynamic function dispatch based on the current locale. 
+  Provides dynamic function dispatch based on the current locale.
   """
 
   @doc """
@@ -34,19 +34,19 @@ defmodule Fab.Locale do
     split_mod = Module.split(mod)
 
     root = List.first(split_mod)
-    provider = List.last(split_mod)
+    generator = List.last(split_mod)
 
-    locale_mod = Module.concat([root, locale, provider])
+    locale_mod = Module.concat([root, locale, generator])
 
-    provider_mod =
+    generator_mod =
       with {:module, _} <- Code.ensure_loaded(locale_mod),
            true <- function_exported?(locale_mod, fun, length(args)) do
         locale_mod
       else
         _ ->
-          Module.concat([root, En, mod])
+          Module.concat([root, En, generator])
       end
 
-    apply(provider_mod, fun, args)
+    apply(generator_mod, fun, args)
   end
 end
