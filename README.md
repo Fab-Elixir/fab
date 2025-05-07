@@ -1,6 +1,6 @@
 # Fab
 
-Fab is an Elixir library for generating fake data.
+Fab is a lightweight Elixir library for generating fake data.
 
 ## Installation
 
