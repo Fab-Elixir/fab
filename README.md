@@ -9,8 +9,12 @@ Add `:fab` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:fab, "~> 0.0.0", only: :test}
+    {:fab, "~> 1.0"}
   ]
 end
 ```
+
+## Documentation
+
+See [HexDocs](https://hexdocs.pm/fab/).
 
