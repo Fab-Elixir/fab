@@ -9,7 +9,6 @@ defmodule FabTest do
       |> String.trim()
       |> :binary.decode_unsigned()
 
-    Application.put_env(:fab, :consistent, true)
     Application.put_env(:fab, :seed, seed)
 
     :ok
