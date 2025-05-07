@@ -4,17 +4,19 @@ defmodule Fab.MixProject do
   def project do
     [
       app: :fab,
+      description: "Fab is a lightweight Elixir library for generating fake data",
       version: "1.0.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      elixirc_paths: elixirc_paths(Mix.env())
+      elixirc_paths: elixirc_paths(Mix.env()),
+      package: package()
     ]
   end
 
   def application do
     [
-      extra_applications: [:eex, :logger]
+      extra_applications: [:logger]
     ]
   end
 
@@ -31,5 +33,15 @@ defmodule Fab.MixProject do
 
   defp elixirc_paths(_env) do
     ["lib/"]
+  end
+
+  defp package do
+    %{
+      authors: ["Anthony Smith"],
+      licenses: ["MIT"],
+      links: %{
+        GitHub: "https://github.com/Fab-Elixir/fab"
+      }
+    }
   end
 end
