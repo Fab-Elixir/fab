@@ -45,6 +45,11 @@ defmodule Fab do
       config :fab, :seed, 0
 
   `Fab.Randomizer` functions will use this seed when picking random values.
+
+  ## Official Fab Libraries
+
+  - [`Fab.Person`](https://hexdocs.pm/fab_person)
+  - [`Fab.Word`](https://hexdocs.pm/fab_word)
   """
 
   @doc """
