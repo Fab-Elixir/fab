@@ -207,6 +207,14 @@ defmodule Fab.String do
   Returns a random string consisting of symbols, numbers and letters from the
   English alphabet.
 
+  ## Options
+
+  - `:case` - Case of the characters. Can be `:lower`, `:mixed` or `:upper`.
+    Defaults to `:mixed`.
+  - `:exclude` - List of characters to exclude from the result
+  - `:min` - Minimum number of characters to generate
+  - `:max` - Maximum number of characters to generate
+
   ## Examples
 
       iex> Fab.String.any()
