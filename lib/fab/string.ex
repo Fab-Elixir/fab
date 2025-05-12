@@ -154,6 +154,7 @@ defmodule Fab.String do
       iex> Fab.String.alpha(min: 5, max: 10)
       "beTkoB"
   """
+  @doc since: "1.0.0"
   @spec alpha([case_t | exclude_t | max_t | min_t]) :: String.t()
   def alpha(opts \\ []) do
     opts
@@ -194,6 +195,7 @@ defmodule Fab.String do
       iex> Fab.String.alphanumeric(min: 5, max: 10)
       "cuCMf7jVfe"
   """
+  @doc since: "1.0.0"
   @spec alphanumeric([case_t | exclude_t | max_t | min_t]) :: String.t()
   def alphanumeric(opts \\ []) do
     characters = casing(opts)
@@ -235,6 +237,7 @@ defmodule Fab.String do
       iex> Fab.String.any(min: 5, max: 10)
       "`>9k@*5'b"
   """
+  @doc since: "1.0.0"
   @spec any([case_t | exclude_t | max_t | min_t]) :: String.t()
   def any(opts \\ []) do
     characters = casing(opts)
@@ -285,6 +288,7 @@ defmodule Fab.String do
       iex> Fab.String.from_characters("abc", min: 5, max: 10)
       "abbbaca"
   """
+  @doc since: "1.0.0"
   @spec from_characters(String.t() | [String.t()], [max_t | min_t]) :: String.t()
   def from_characters(characters, opts \\ [])
 
@@ -332,6 +336,7 @@ defmodule Fab.String do
       iex> Fab.String.numeric(min: 5, max: 10)
       "4042773592"
   """
+  @doc since: "1.0.0"
   @spec numeric([exclude_t | max_t | min_t]) :: String.t()
   def numeric(opts \\ []) do
     @numeric
@@ -368,6 +373,7 @@ defmodule Fab.String do
       iex> Fab.String.symbol(min: 5, max: 10)
       "}&$^!]?)`"
   """
+  @doc since: "1.0.0"
   @spec symbol([exclude_t | max_t | min_t]) :: String.t()
   def symbol(opts \\ []) do
     @symbol
