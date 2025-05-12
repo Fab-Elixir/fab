@@ -30,6 +30,7 @@ defmodule Fab.Number do
       iex> Fab.Number.float(precision: 3)
       0.217
   """
+  @doc since: "1.0.0"
   @spec float(number | keyword) :: float
   def float(opts \\ [])
 
@@ -45,6 +46,42 @@ defmodule Fab.Number do
     real = uniform()
 
     Float.round(real * (max - min) + min, precision)
+  end
+
+  @doc """
+  Returns a random hexadecimal.
+
+  ## Options
+
+  - `:min` - Lower bound of the generated hexadecimal. Defaults to `0`.
+  - `:max` - Lower bound of the generated hexadecimal. Defaults to `15`.
+
+  ## Examples
+
+      iex> Fab.Number.hex()
+      "F"
+
+      iex> Fab.Number.hex(255)
+      "7F"
+
+      iex> Fab.Number.hex(min: 0, max: 65535)
+      "467F"
+  """
+  @doc since: "1.1.0"
+  @spec hex(number | keyword) :: String.t()
+  def hex(opts \\ [])
+
+  def hex(max) when is_number(max) do
+    hex(max: max)
+  end
+
+  def hex(opts) do
+    min = Keyword.get(opts, :min, 0)
+    max = Keyword.get(opts, :max, 15)
+
+    [min: min, max: max]
+    |> integer()
+    |> Integer.to_string(16)
   end
 
   @doc """
@@ -67,6 +104,7 @@ defmodule Fab.Number do
       iex> Fab.Number.integer(min: 1, max: 1000)
       185
   """
+  @doc since: "1.0.0"
   @spec integer(pos_integer | keyword) :: integer
   def integer(opts \\ [])
 
