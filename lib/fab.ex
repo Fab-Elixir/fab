@@ -48,6 +48,7 @@ defmodule Fab do
 
   ## Official Fab Libraries
 
+  - [`Fab.Internet`](https://hexdocs.pm/fab_internet)
   - [`Fab.Person`](https://hexdocs.pm/fab_person)
   - [`Fab.Word`](https://hexdocs.pm/fab_word)
   """
