@@ -41,6 +41,7 @@ defmodule Fab.DateTime do
       iex> Fab.DateTime.anytime(unit: :second)
       ~U[1965-10-18 11:26:15Z]
   """
+  @doc since: "1.0.0"
   @spec anytime([ref_date_t | unit_t]) :: DateTime.t()
   def anytime(opts \\ []) do
     now = now(opts)
@@ -71,6 +72,7 @@ defmodule Fab.DateTime do
       iex> Fab.DateTime.between(from: ~U[2025-05-05 01:57:58Z], to: ~U[2025-05-06 10:34:09Z], unit: :second)
       ~U[2025-05-05 19:09:21Z]
   """
+  @doc since: "1.0.0"
   @spec between([from_t | to_t | unit_t]) :: DateTime.t()
   def between(opts) do
     unit = unit(opts)
@@ -111,6 +113,7 @@ defmodule Fab.DateTime do
       iex> Fab.DateTime.future(unit: :second)
       ~U[2026-03-24 06:13:08Z]
   """
+  @doc since: "1.0.0"
   @spec future([ref_date_t | unit_t | years_t]) :: DateTime.t()
   def future(opts \\ []) do
     now = now(opts)
@@ -145,6 +148,7 @@ defmodule Fab.DateTime do
       iex> Fab.DateTime.past(unit: :second)
       ~U[2024-07-30 14:33:43Z]
   """
+  @doc since: "1.0.0"
   @spec past([ref_date_t | unit_t | years_t]) :: DateTime.t()
   def past(opts \\ []) do
     years = Keyword.get(opts, :years, 1)
@@ -178,6 +182,7 @@ defmodule Fab.DateTime do
       iex> Fab.DateTime.recent(unit: :second)
       ~U[2025-05-05 16:44:47Z]
   """
+  @doc since: "1.0.0"
   @spec recent([days_t | ref_date_t | unit_t]) :: DateTime.t()
   def recent(opts \\ []) do
     days = Keyword.get(opts, :days, 1)
@@ -211,6 +216,7 @@ defmodule Fab.DateTime do
       iex> Fab.DateTime.soon(unit: :second)
       ~U[2025-05-06 11:10:33Z]
   """
+  @doc since: "1.0.0"
   @spec soon([days_t | ref_date_t | unit_t]) :: DateTime.t()
   def soon(opts \\ []) do
     days = Keyword.get(opts, :days, 1)
