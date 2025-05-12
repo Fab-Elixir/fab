@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Fab-Elixir/fab/compare/v1.0.1...v1.1.0) (2025-05-12)
+
+
+### Features
+
+* added support for generating random hexadecimal numbers ([#33](https://github.com/Fab-Elixir/fab/issues/33)) ([d8a2763](https://github.com/Fab-Elixir/fab/commit/d8a2763cdf40534e5051f767e9756e3c8d4eaf9f))
+
 ## [1.0.1](https://github.com/Fab-Elixir/fab/compare/v1.0.0...v1.0.1) (2025-05-07)
 
 
