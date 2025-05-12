@@ -14,7 +14,7 @@ def deps do
 end
 ```
 
-## Documentation
+## Important Links
 
-See [HexDocs](https://hexdocs.pm/fab/).
+- [Documentation](ihttps://hexdocs.pm/fab/).
 
