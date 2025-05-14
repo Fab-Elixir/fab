@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Fab-Elixir/fab/compare/v1.1.0...v1.1.1) (2025-05-14)
+
+
+### Bug Fixes
+
+* added spec for passing integer as only argument to `Fab.String` functions ([#40](https://github.com/Fab-Elixir/fab/issues/40)) ([c628ff9](https://github.com/Fab-Elixir/fab/commit/c628ff9c6fafeb482cb4c64920abbb3072313b78))
+
 ## [1.1.0](https://github.com/Fab-Elixir/fab/compare/v1.0.1...v1.1.0) (2025-05-12)
 
 
