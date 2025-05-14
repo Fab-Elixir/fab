@@ -248,7 +248,7 @@ defmodule Fab.String do
     from_characters(characters, opts)
   end
 
-  @spec casing(keyword) :: [String.t()]
+  @spec casing(non_neg_integer | keyword) :: [String.t()]
   defp casing(opts) when is_list(opts) do
     case Keyword.get(opts, :case, :mixed) do
       :lower ->
@@ -382,7 +382,7 @@ defmodule Fab.String do
     |> from_characters(opts)
   end
 
-  @spec exclude([String.t()], keyword) :: [String.t()]
+  @spec exclude([String.t()], non_neg_integer | keyword) :: [String.t()]
   defp exclude(characters, opts) when is_list(opts) do
     Enum.reduce(characters, [], fn character, acc ->
       exclude = Keyword.get(opts, :exclude, [])
