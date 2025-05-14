@@ -155,7 +155,7 @@ defmodule Fab.String do
       "beTkoB"
   """
   @doc since: "1.0.0"
-  @spec alpha([case_t | exclude_t | max_t | min_t]) :: String.t()
+  @spec alpha(non_neg_integer | [case_t | exclude_t | max_t | min_t]) :: String.t()
   def alpha(opts \\ []) do
     opts
     |> casing()
@@ -196,7 +196,7 @@ defmodule Fab.String do
       "cuCMf7jVfe"
   """
   @doc since: "1.0.0"
-  @spec alphanumeric([case_t | exclude_t | max_t | min_t]) :: String.t()
+  @spec alphanumeric(non_neg_integer | [case_t | exclude_t | max_t | min_t]) :: String.t()
   def alphanumeric(opts \\ []) do
     characters = casing(opts)
     characters = characters ++ @numeric
@@ -238,7 +238,7 @@ defmodule Fab.String do
       "`>9k@*5'b"
   """
   @doc since: "1.0.0"
-  @spec any([case_t | exclude_t | max_t | min_t]) :: String.t()
+  @spec any(non_neg_integer | [case_t | exclude_t | max_t | min_t]) :: String.t()
   def any(opts \\ []) do
     characters = casing(opts)
     characters = characters ++ @numeric
@@ -289,7 +289,8 @@ defmodule Fab.String do
       "abbbaca"
   """
   @doc since: "1.0.0"
-  @spec from_characters(String.t() | [String.t()], [max_t | min_t]) :: String.t()
+  @spec from_characters(String.t() | [String.t()], non_neg_integer | [max_t | min_t]) ::
+          String.t()
   def from_characters(characters, opts \\ [])
 
   def from_characters(characters, opts) when is_binary(characters) do
@@ -337,7 +338,7 @@ defmodule Fab.String do
       "4042773592"
   """
   @doc since: "1.0.0"
-  @spec numeric([exclude_t | max_t | min_t]) :: String.t()
+  @spec numeric(non_neg_integer | [exclude_t | max_t | min_t]) :: String.t()
   def numeric(opts \\ []) do
     @numeric
     |> exclude(opts)
@@ -374,7 +375,7 @@ defmodule Fab.String do
       "}&$^!]?)`"
   """
   @doc since: "1.0.0"
-  @spec symbol([exclude_t | max_t | min_t]) :: String.t()
+  @spec symbol(non_neg_integer | [exclude_t | max_t | min_t]) :: String.t()
   def symbol(opts \\ []) do
     @symbol
     |> exclude(opts)
