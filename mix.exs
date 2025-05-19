@@ -5,7 +5,7 @@ defmodule Fab.MixProject do
     [
       app: :fab,
       description: "Fab is a lightweight Elixir library for generating fake data",
-      version: "1.2.1",
+      version: "1.2.2",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       docs: docs(),

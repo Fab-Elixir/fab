@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/Fab-Elixir/fab/compare/v1.2.1...v1.2.2) (2025-05-19)
+
+
+### Bug Fixes
+
+* fixed `Fab.Template.binding_t` type ([#52](https://github.com/Fab-Elixir/fab/issues/52)) ([7052ebf](https://github.com/Fab-Elixir/fab/commit/7052ebf090a191ad431b428550b975a6e72381fb))
+
 ## [1.2.1](https://github.com/Fab-Elixir/fab/compare/v1.2.0...v1.2.1) (2025-05-19)
 
 
