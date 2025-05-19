@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Fab-Elixir/fab/compare/v1.2.0...v1.2.1) (2025-05-19)
+
+
+### Bug Fixes
+
+* support static template bindings ([#50](https://github.com/Fab-Elixir/fab/issues/50)) ([979e3f4](https://github.com/Fab-Elixir/fab/commit/979e3f402478cdc9057f42b234da08cfed4235af))
+
 ## [1.2.0](https://github.com/Fab-Elixir/fab/compare/v1.1.2...v1.2.0) (2025-05-19)
 
 
