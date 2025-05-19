@@ -16,5 +16,5 @@ end
 
 ## Important Links
 
-- [Documentation](ihttps://hexdocs.pm/fab/).
+- [Documentation](https://hexdocs.pm/fab/)
 
