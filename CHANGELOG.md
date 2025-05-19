@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Fab-Elixir/fab/compare/v1.1.2...v1.2.0) (2025-05-19)
+
+
+### Features
+
+* implemented generator templates ([#45](https://github.com/Fab-Elixir/fab/issues/45)) ([38d4066](https://github.com/Fab-Elixir/fab/commit/38d40668d466dc50f6122f8be3ee674876cdbc7e))
+
 ## [1.1.2](https://github.com/Fab-Elixir/fab/compare/v1.1.1...v1.1.2) (2025-05-14)
 
 
