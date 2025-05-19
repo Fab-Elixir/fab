@@ -3,12 +3,13 @@ defmodule Fab.Template do
   Dynamically generate formatted text using EEx templates.
 
   `Fab.Template` defines EEx templates with bindings resolved at runtime via
-  `{module, function, args}` tuples. Useful when fake data must match a
-  specific format, such as localized output in locale modules.
+  `{module, function, args}` tuples or static string values. Useful when fake
+  data must match a specific format, such as localized output in locale
+  modules.
   """
 
   @type binding_t ::
-          {atom, mfa}
+          {atom, mfa | String.t()}
 
   @type t ::
           %__MODULE__{
@@ -16,14 +17,18 @@ defmodule Fab.Template do
             source: String.t()
           }
 
+  @enforce_keys [:bindings, :source]
+
   defstruct [:bindings, :source]
 
   @doc """
   Renders the template by evaluating its bindings and applying them to the EEx
   source.
 
-  Each binding must be a `{module, function, args}` tuple. These are invoked at
-  render time, and the results are passed as the template context.
+  Each binding must be a `{module, function, args}` tuple or a static string.
+  If the binding is an MFA it will be invoked at render time. If the binding is
+  a string it will be used as-is. The results are passed as the template
+  context.
 
   Returns the rendered string.
   """
@@ -31,8 +36,12 @@ defmodule Fab.Template do
   @spec render(t) :: String.t()
   def render(template) do
     bindings =
-      Enum.map(template.bindings, fn {key, {m, f, a}} ->
-        {key, apply(m, f, a)}
+      Enum.map(template.bindings, fn
+        {key, {m, f, a}} ->
+          {key, apply(m, f, a)}
+
+        {key, value} ->
+          {key, value}
       end)
 
     EEx.eval_string(template.source, bindings)
