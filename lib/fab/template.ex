@@ -9,7 +9,7 @@ defmodule Fab.Template do
   """
 
   @type binding_t ::
-          {atom, mfa | String.t()}
+          {atom, {module, atom, list} | String.t()}
 
   @type t ::
           %__MODULE__{
