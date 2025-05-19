@@ -8,6 +8,7 @@ defmodule Fab.MixProject do
       version: "1.1.2",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
+      docs: docs(),
       deps: deps(),
       elixirc_paths: elixirc_paths(Mix.env()),
       package: package()
@@ -17,6 +18,12 @@ defmodule Fab.MixProject do
   def application do
     [
       extra_applications: [:eex, :logger]
+    ]
+  end
+
+  defp docs do
+    [
+      main: "Fab"
     ]
   end
 
