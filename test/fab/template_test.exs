@@ -12,6 +12,17 @@ defmodule Fab.TemplateTest do
       }
 
     assert "Hello World" == Fab.Template.render(template)
+
+    template =
+      %Fab.Template{
+        bindings: [
+          b1: "Hello",
+          b2: "World"
+        ],
+        source: "<%= b1 %> <%= b2 %>"
+      }
+
+    assert "Hello World" == Fab.Template.render(template)
   end
 
   def b1 do
