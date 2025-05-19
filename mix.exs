@@ -16,7 +16,7 @@ defmodule Fab.MixProject do
 
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:eex, :logger]
     ]
   end
 
